@@ -3,6 +3,10 @@
 import math
 
 def palindrome(chaine):
+
+    #On enlève tous les caratères espace
+    chaine = chaine.replace(' ','')
+
     result = True
     i = 0
     n = len(chaine)
