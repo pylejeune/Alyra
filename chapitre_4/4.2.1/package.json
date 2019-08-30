@@ -1,0 +1,16 @@
+{
+  "name": "4.2.1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "application.js",
+  "dependencies": {
+    "ethers": "^4.0.36"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node application.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
