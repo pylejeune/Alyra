@@ -18,7 +18,7 @@ provider.getGasPrice().then((gasPrice) => {
 
 async function connectContract(){
 
-    const abi = [
+    const abi =[
         {
             "constant": false,
             "inputs": [
@@ -77,6 +77,20 @@ async function connectContract(){
         },
         {
             "constant": true,
+            "inputs": [],
+            "name": "listHash",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "bytes32[]"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "constant": true,
             "inputs": [
                 {
                     "name": "devoir",
@@ -105,18 +119,22 @@ async function connectContract(){
         contratSinge = contratCredibilite.connect(provider.getSigner(user.address));
 
         console.log(contratSinge);
+        console.log("Adresse user");
+        console.log(user.address);
 
         contratCredibilite.cred("0x439fad7efb636b94b669f3230f17a621d6d210f3").then((cred) => {
             console.log("Credibilite : " + cred);
             document.getElementById("cred").innerHTML = cred
         });
 
+        console.log("Liste Hash");
+        console.dir(contratCredibilite.listHash());
 
         return contratSinge;
     } catch (error) {
         console.log(error);
     }
-    
+
 }
 
  async function remettre() {
@@ -124,8 +142,9 @@ async function connectContract(){
     let contratCredibilite = await connectContract();
 
     stringDevoir = document.getElementById("devoirs").value;
-    await contratCredibilite.produireHash(stringDevoir).then((info) => {
-        console.log("info : " + info);
+    await contratCredibilite.produireHash(stringDevoir).then((condentsat) => {
+        console.log("condentsat");
+        console.dir(condentsat);
     }).catch((err) => {
         console.log(err);
     });
@@ -134,8 +153,13 @@ async function connectContract(){
         console.log("Credibilite : " + cred);
         document.getElementById("cred").innerHTML = cred
     });
-
 };
+
+
+
+
+
+
 
 
 
