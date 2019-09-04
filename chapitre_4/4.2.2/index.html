@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>4.2.1 : Utilisation Ethers.js</title>
+
+    <script src="https://cdn.ethers.io/scripts/ethers-v4.min.js"
+
+    charset="utf-8"
+
+    type="text/javascript">
+
+</script>
+</head>
+<body>
+    <h1>4.2.1 : Utilisation Ethers.js</h1>
+
+    <h2>Block actuel</h2>
+    <span id="block"></span>
+    <br /><br />
+    <h2>Prix du Gas</h2>
+    <span id="gasPrice"></span>
+    <br /><br />
+    <h2>Smart Contract</h2>
+    <input type="text" id="contract" value="0xb9e53E8bbbe10C62FaB7B0AfBd15732FeD39e205" placeholder="0xb9e53E8bbbe10C62FaB7B0AfBd15732FeD39e205"/>
+    <button onclick="connectContract()">Charger</button>
+    <br /><br />
+    <h2>Remettre un devoir</h2>
+    <input type="text" id="devoirs" value="" placeholder="pylejeune.fr"/>
+    <button onclick="remettre()">Envoyer</button>
+    <br /><br />
+    <h2>Credibilite</h2>
+    <span id="cred"></span>
+    
+
+</body>
+
+<script src="application.js" charset="utf-8" type="text/javascript"></script>
+
+</html>
